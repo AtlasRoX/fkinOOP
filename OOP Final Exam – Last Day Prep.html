@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OOP Final Exam – Last Day Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafaf7;--paper:#fff;--ink:#1a1a1a;--mut:#6b6b6b;--line:#e7e5df;--acc:#2f5bea;--codebg:#f5f5f2;--outbg:#eef7f0;--outink:#1d6b3a;--tip:#8a5a00;--tipbg:#fff8e6}
+@media(prefers-color-scheme:dark){:root{--bg:#121212;--paper:#1c1c1c;--ink:#ececec;--mut:#9a9a9a;--line:#2e2e2e;--acc:#7da2ff;--codebg:#161616;--outbg:#13261a;--outink:#7fdc9c;--tip:#f2c46d;--tipbg:#2a2312}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Inter,"Noto Sans Bengali",sans-serif}
+.wrap{display:flex;max-width:1180px;margin:auto}
+aside{width:270px;flex:none;position:sticky;top:0;height:100vh;overflow-y:auto;padding:24px 12px 24px 20px;border-right:1px solid var(--line)}
+aside .t{font-weight:700;font-size:15px;margin-bottom:4px}aside .p{font-size:13px;color:var(--mut);margin-bottom:14px}
+aside a{display:flex;gap:8px;font-size:14px;line-height:1.35;color:var(--ink);text-decoration:none;padding:7px 10px;border-radius:8px}
+aside a:hover{background:var(--line)}aside a.on{background:var(--acc);color:#fff}aside a.done:not(.on){color:var(--mut);text-decoration:line-through}
+aside a span{opacity:.6;min-width:22px}
+.bar{height:4px;background:var(--line);border-radius:9px;margin-bottom:14px}.bar i{display:block;height:100%;width:0;background:var(--acc);border-radius:9px;transition:.3s}
+main{flex:1;min-width:0;padding:28px 40px 120px;max-width:820px}
+h1{font-size:28px;margin:0 0 4px}.sub{color:var(--mut);margin:0 0 28px}
+.q{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 30px;margin-bottom:26px}
+.q h2{font-size:20px;line-height:1.4;margin:0 0 16px;display:flex;gap:10px}
+.q h2 b{color:var(--acc);flex:none}
+.q h3{font-size:16px;margin:20px 0 6px}
+.q p{margin:0 0 10px}.q ul,.q ol{margin:0 0 12px;padding-left:22px}.q li{margin:3px 0}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:16px 0 4px}
+pre{background:var(--codebg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;font:14px/1.6 "JetBrains Mono",monospace;margin:4px 0 12px}
+pre.out{background:var(--outbg);color:var(--outink);border-color:transparent}
+.kw{color:#a626a4}.st{color:#50a14f}.cm{color:#a0a1a7;font-style:italic}.an{color:#c18401}
+@media(prefers-color-scheme:dark){.kw{color:#c792ea}.st{color:#a5d6a7}.cm{color:#6b7280}.an{color:#ffcb6b}}
+code{font:14px "JetBrains Mono",monospace;background:var(--codebg);padding:1px 6px;border-radius:5px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;margin:6px 0 14px;font-size:15px}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--codebg);font-weight:600}
+.tip{background:var(--tipbg);color:var(--tip);border-radius:10px;padding:10px 14px;font-size:15px;margin-top:16px}
+.tip b{font-weight:600}
+.sg{display:inline-block;font-size:12px;font-weight:600;color:var(--acc);border:1px solid var(--acc);border-radius:99px;padding:1px 10px;margin-bottom:10px}
+.foot{display:flex;justify-content:flex-end;margin-top:14px}
+.foot label{font-size:14px;color:var(--mut);cursor:pointer;display:flex;gap:6px;align-items:center;user-select:none}
+.foot input{width:17px;height:17px;accent-color:var(--acc)}
+#menu{display:none}
+@media(max-width:860px){
+ aside{position:fixed;inset:0 auto 0 0;z-index:20;background:var(--paper);transform:translateX(-100%);transition:.25s;width:84%;max-width:320px;box-shadow:0 0 40px #0004}
+ aside.open{transform:none}
+ main{padding:18px 14px 100px}.q{padding:18px 16px}body{font-size:16px}
+ #menu{display:block;position:fixed;right:14px;bottom:14px;z-index:21;background:var(--acc);color:#fff;border:0;border-radius:99px;padding:12px 18px;font:600 15px Inter;box-shadow:0 4px 16px #0004}
+}
+</style></head><body>
+<div class="wrap">
+<aside id="side">
+<div class="t">OOP Final — Questions</div>
+<div class="p" id="prog">0 / 0 done</div>
+<div class="bar"><i id="pbar"></i></div>
+<nav id="toc"></nav>
+</aside>
+<main>
+<h1>OOP (Java) Final Exam — Ready Answers</h1>
+<p class="sub">Each card is a complete answer. Write it exactly as shown. The yellow line at the bottom is only for remembering.</p>
+
+<!-- Q1 -->
+<section class="q" id="q1"><div class="sg">Teacher suggestion 1 · Definitions</div><h2><b>Q1.</b>Define Class and Object with example.</h2>
+<p><b>Class:</b> A class is a blueprint used to create objects. It defines variables and methods.</p>
+<pre>class Car {
+    String color;
+    void drive() {}
+}</pre>
+<p><b>Object:</b> An object is an instance of a class. It has state, behavior, and identity.</p>
+<pre>Car myCar = new Car();</pre>
+<div class="tip"><b>Remember:</b> Class = বাড়ির নকশা · Object = নকশা দিয়ে তৈরি আসল বাড়ি</div>
+</section>
+
+<!-- Q2 -->
+<section class="q" id="q2"><div class="sg">Teacher suggestion 1 · Definitions</div><h2><b>Q2.</b>Explain the four pillars of OOP.</h2>
+<p>The four pillars of OOP are Abstraction, Encapsulation, Inheritance, and Polymorphism.</p>
+<ol>
+<li><b>Encapsulation:</b> Encapsulation is the process of wrapping data and methods into a single unit called a class. It also protects data from direct access by using access modifiers.<br><i>Example:</i> Private variables and public getter/setter methods (e.g., bank account balance kept private).</li>
+<li><b>Inheritance:</b> Inheritance is a process in which one class acquires the properties and methods of another class. It helps to reuse existing code and reduce code duplication.<br><i>Example:</i> A Dog class inherits from an Animal class — <code>class Dog extends Animal {}</code></li>
+<li><b>Polymorphism:</b> Polymorphism means one name with many forms. It allows the same method or object to perform different tasks in different situations.<br><i>Example:</i> Method overloading and method overriding.</li>
+<li><b>Abstraction:</b> Abstraction is the process of hiding unnecessary implementation details and showing only the essential features of an object to the user.<br><i>Example:</i> Abstract classes and interfaces in Java (real life: ATM withdraw button hides the internal process).</li>
+</ol>
+<div class="tip"><b>Remember:</b> E-I-P-A · Encapsulation = Data বাক্সে বন্ধ · Inheritance = code reuse · Polymorphism = One name, many forms · Abstraction = কী করে দেখায়, কীভাবে করে লুকায়</div>
+</section>
+
+<!-- Q3 -->
+<section class="q" id="q3"><div class="sg">Teacher suggestion 1 · Definitions</div><h2><b>Q3.</b>Define Abstract Class, Abstract Method, and Interface with example.</h2>
+<p><b>Abstract Class:</b> An abstract class is a class that is declared with the abstract keyword. It cannot be used to create objects directly. It can contain both abstract and non-abstract methods.</p>
+<pre>abstract class Animal {
+    abstract void sound();
+
+    void eat() {
+        System.out.println("Eating");
+    }
+}</pre>
+<p><b>Abstract Method:</b> An abstract method is a method that has no body or implementation. It has only a method declaration, and its implementation is provided by the subclass.</p>
+<pre>abstract void sound();</pre>
+<p><b>Interface:</b> An interface is a blueprint of a class that contains method declarations and constants. It is a contract that defines methods a class must implement. A class uses the implements keyword to implement an interface.</p>
+<pre>interface Animal {
+    void sound();
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}</pre>
+<h3>Abstract Class &amp; Method Program</h3>
+<pre>abstract class Animal {
+    abstract void sound();   // every subclass must write sound()
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Animal a1 = new Dog();
+        Animal a2 = new Cat();
+        a1.sound();
+        a2.sound();
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">Dog barks
+Cat meows</pre>
+<div class="tip"><b>Remember:</b> Abstract method = নাম আছে, Body নেই · Abstract class = Object বানানো যায় না · Interface = চুক্তি, <code>implements</code> দিয়ে মানতে হয় · ⚠️ Interface method implement করলে <code>public</code> লিখতেই হবে</div>
+</section>
+
+<!-- Q4 -->
+<section class="q" id="q4"><div class="sg">Teacher suggestion 1 · Definitions</div><h2><b>Q4.</b>What is Subclass Reference and Superclass Reference? Explain with example.</h2>
+<p><b>Subclass Reference:</b> A subclass reference is a reference variable of a subclass type that is used to refer to an object of that subclass. It can access both parent and child members.</p>
+<pre>Dog d = new Dog();   // subclass reference</pre>
+<p style="font-size:15px;color:var(--mut)"><code>Dog</code> = reference variable type · <code>d</code> = reference variable · <code>new Dog()</code> = object</p>
+<p><b>Superclass Reference:</b> A superclass reference is a reference variable of a superclass type that is used to refer to an object of its subclass. It can access only the members of the parent class.</p>
+<pre>Animal a = new Dog();   // superclass reference</pre>
+<h3>Example</h3>
+<pre>class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();      // subclass reference
+        d.eat();
+        d.bark();
+
+        Animal a = new Dog();   // superclass reference
+        a.eat();
+        // a.bark();   // Compile-time error
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">Animal is eating
+Dog is barking
+Animal is eating</pre>
+<p><b>Explanation:</b> The subclass reference <code>d</code> can call both <code>eat()</code> and <code>bark()</code>. The superclass reference <code>a</code> can call only <code>eat()</code>, because <code>bark()</code> is not defined in Animal.</p>
+<div class="tip"><b>Remember:</b> Child reference = Parent + Child সব · Parent reference = শুধু Parent-এর</div>
+</section>
+
+<!-- Q5 -->
+<section class="q" id="q5"><div class="sg">Teacher suggestion 2</div><h2><b>Q5.</b>Differentiate between Abstraction and Encapsulation.</h2>
+<table><tr><th>Point</th><th>Abstraction</th><th>Encapsulation</th></tr>
+<tr><td>1. Definition</td><td>Hides implementation details and shows essential features.</td><td>Combines data and methods into one unit and hides data.</td></tr>
+<tr><td>2. Focus</td><td>Focuses on what an object does.</td><td>Focuses on how data is protected.</td></tr>
+<tr><td>3. Level</td><td>Design level.</td><td>Implementation level.</td></tr>
+<tr><td>4. Achieved by</td><td>Abstract classes and interfaces.</td><td>Private variables and public getter/setter methods.</td></tr>
+<tr><td>5. Purpose</td><td>Reduces complexity.</td><td>Provides data security and controlled access.</td></tr>
+<tr><td>6. Example</td><td>ATM – shows the Withdraw button but hides the internal process.</td><td>Bank Account – keeps balance private and allows access through methods.</td></tr></table>
+<div class="tip"><b>Remember:</b> Abstraction = WHAT · Encapsulation = HOW to protect</div>
+</section>
+
+<!-- Q6 -->
+<section class="q" id="q6"><div class="sg">Teacher suggestion 3</div><h2><b>Q6.</b>What is Inheritance? Describe different types of Inheritance.</h2>
+<p><b>Definition:</b> Inheritance is an OOP concept where a child class acquires the properties and methods of a parent class.</p>
+<p>There are five types of inheritance:</p>
+<table><tr><th>Type</th><th>Explanation</th><th>Example</th></tr>
+<tr><td>1. Single Inheritance</td><td>One child class inherits from one parent class.</td><td>A → B</td></tr>
+<tr><td>2. Multilevel Inheritance</td><td>A class inherits from a child class, forming a chain.</td><td>A → B → C</td></tr>
+<tr><td>3. Hierarchical Inheritance</td><td>Multiple child classes inherit from one parent class.</td><td>A → B, A → C</td></tr>
+<tr><td>4. Multiple Inheritance</td><td>One class inherits from multiple parent classes.</td><td>A + B → C</td></tr>
+<tr><td>5. Hybrid Inheritance</td><td>A combination of two or more types of inheritance.</td><td>Combination of different types</td></tr></table>
+<p><b>Note:</b> Java does not support multiple inheritance through classes. It supports it through interfaces.</p>
+<div class="tip"><b>Remember:</b> S – M – H – M – H (Single, Multilevel, Hierarchical, Multiple, Hybrid)</div>
+</section>
+
+<!-- Q7 -->
+<section class="q" id="q7"><div class="sg">Teacher suggestion 3</div><h2><b>Q7.</b>What is Polymorphism? Describe its types.</h2>
+<p><b>Definition:</b> Polymorphism is an OOP concept where one method or object can behave in different ways.</p>
+<p>There are two types of polymorphism:</p>
+<table><tr><th>Type</th><th>Explanation</th><th>Example</th></tr>
+<tr><td>1. Compile-time Polymorphism (Static)</td><td>The same method name is used with different parameters in the same class.</td><td>Method Overloading</td></tr>
+<tr><td>2. Runtime Polymorphism (Dynamic)</td><td>A child class provides its own implementation of a parent class method.</td><td>Method Overriding</td></tr></table>
+<div class="tip"><b>Remember:</b> Overloading = Same name, different parameters · Overriding = Same method, different implementation</div>
+</section>
+
+<!-- Q8 -->
+<section class="q" id="q8"><div class="sg">Teacher suggestion 4</div><h2><b>Q8.</b>Explain Method Overloading and Method Overriding with example.</h2>
+<h3>1. Method Overloading</h3>
+<p><b>Definition:</b> Method overloading is a process of creating multiple methods with the same name but different parameters in the same class. It allows a class to perform similar tasks in different ways.</p>
+<pre>class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Calculator obj = new Calculator();
+        System.out.println(obj.add(10, 20));
+        System.out.println(obj.add(10, 20, 30));
+        System.out.println(obj.add(5.5, 2.5));
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">30
+60
+8.0</pre>
+<p><b>Identification:</b> Same method name + different parameters = Method Overloading.<br><b>Type:</b> Compile-time Polymorphism (Static).</p>
+<h3>2. Method Overriding</h3>
+<p><b>Definition:</b> Method overriding is a process where a child class provides its own implementation of a method that is already defined in its parent class. It allows the child class to change the behavior of the inherited method.</p>
+<pre>class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Dog obj = new Dog();
+        obj.sound();
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">Dog barks</pre>
+<p><b>Identification:</b> Same method name + same parameters + parent-child relationship = Method Overriding.<br><b>Type:</b> Runtime Polymorphism (Dynamic).</p>
+<table><tr><th>Point</th><th>Method Overloading</th><th>Method Overriding</th></tr>
+<tr><td>Method Name</td><td>Same</td><td>Same</td></tr>
+<tr><td>Parameters</td><td>Different</td><td>Same</td></tr>
+<tr><td>Class</td><td>Same class</td><td>Parent and Child class</td></tr>
+<tr><td>Polymorphism</td><td>Compile-time</td><td>Runtime</td></tr></table>
+<div class="tip"><b>Remember:</b> Overloading = same name, different parameters · Overriding = same name, same parameters, different implementation</div>
+</section>
+
+<!-- Q9 -->
+<section class="q" id="q9"><div class="sg">Teacher suggestion 5 · Lab code</div><h2><b>Q9.</b>Write a program to show Encapsulation (Student Information).</h2>
+<pre>class Student {
+    private String name;
+    private int age;
+    private int studentId;
+
+    // Setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+
+    // Getters
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+
+        // Set values
+        s1.setName("Rahim");
+        s1.setAge(21);
+        s1.setStudentId(101);
+
+        // Get and print values
+        System.out.println("Name: " + s1.getName());
+        System.out.println("Age: " + s1.getAge());
+        System.out.println("ID: " + s1.getStudentId());
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">Name: Rahim
+Age: 21
+ID: 101</pre>
+<p><b>Explanation:</b> The variables are private, so they cannot be accessed directly from outside. Setter methods set the values and getter methods return the values.</p>
+<p><b>Private variables + Public Getters and Setters = Encapsulation.</b></p>
+<h3>Short version (name &amp; age only)</h3>
+<p><i>Q: Write a Java code snippet to create a class Student having private instance variables name and age. Provide public getter and setter methods to access and modify these variables.</i></p>
+<pre>class Student {
+    private String name;
+    private int age;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.setName("Partha");
+        s1.setAge(21);
+        System.out.println("Name: " + s1.getName());
+        System.out.println("Age: " + s1.getAge());
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">Name: Partha
+Age: 21</pre>
+<div class="tip"><b>Remember:</b> Private = লুকায় · Setter = ঢোকায় · Getter = বের করে</div>
+</section>
+
+<!-- Q10 -->
+<section class="q" id="q10"><div class="sg">Teacher suggestion 6</div><h2><b>Q10.</b>Explain Constructor Execution Order with example.</h2>
+<p><b>Definition:</b> Constructor execution order is the order in which constructors are executed when an object of a subclass is created. The parent class constructor executes first, followed by the child class constructor.</p>
+<p><b>Execution Order:</b> 1. Parent class constructor → 2. Child class constructor.</p>
+<pre>class A {
+    A() {
+        System.out.println("Class A Constructor");
+    }
+}
+
+class B extends A {
+    B() {
+        super();
+        System.out.println("Class B Constructor");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        B obj = new B();
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">Class A Constructor
+Class B Constructor</pre>
+<p><b>Explanation:</b></p>
+<ul><li><code>new B()</code> creates an object of class B.</li>
+<li><code>super()</code> calls the parent class constructor (A).</li>
+<li>After A finishes, the child constructor (B) executes.</li></ul>
+<p><b>Note:</b> <code>super()</code> must be the first statement of the child constructor. Static blocks run once from Parent to Child; for every new object, the Parent's instance block and constructor run before the Child's.</p>
+<div class="tip"><b>Remember:</b> আগে বাবা, পরে ছেলে</div>
+</section>
+
+<!-- Q11 -->
+<section class="q" id="q11"><div class="sg">Teacher suggestion 7 · Slide dry run</div><h2><b>Q11.</b>Dry run the following code (Polymorphism + Inheritance) and find the output.</h2>
+<p><b>Dry Run:</b> Executing code step by step to find its output.</p>
+<div class="lbl">Class A (Parent)</div>
+<pre>class A {
+    A() {
+        System.out.println("A's Constructor");
+    }
+
+    static void show() {
+        System.out.println("Class A");
+    }
+
+    void display() {
+        System.out.println("display A");
+        privateMethod();
+    }
+
+    void method1() {
+        System.out.println("Parent method");
+        privateMethod();
+    }
+
+    private void privateMethod() {
+        System.out.println("it is a private method in Class A");
+    }
+}</pre>
+<div class="lbl">Class B (Child)</div>
+<pre>class B extends A {
+    B() {
+        System.out.println("B's Constructor");
+    }
+
+    static void show() {
+        System.out.println("Class B");
+    }
+
+    void display() {
+        System.out.println("display B");
+        privateMethod();
+    }
+
+    void method1(int x) {
+        System.out.println("Child method" + x);
+    }
+
+    void method2() {
+        System.out.println("Child method2");
+    }
+
+    private void privateMethod() {
+        System.out.println("it is a private method in Class B");
+    }
+}</pre>
+<div class="lbl">Main Class</div>
+<pre>class Test {
+    public static void main(String[] args) {
+        A obj1 = new B();
+        A obj2 = new A();
+        B obj3 = new B();
+
+        obj1.show();
+        obj1.display();
+        // obj1.method2();   // Compile-time error
+
+        obj2.show();
+        obj2.display();
+
+        obj1.method1();
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">A's Constructor
+B's Constructor
+A's Constructor
+A's Constructor
+B's Constructor
+Class A
+display B
+it is a private method in Class B
+Class A
+display A
+it is a private method in Class A
+Parent method
+it is a private method in Class A</pre>
+<h3>Dry Run Explanation</h3>
+<table><tr><th>Statement</th><th>Reason</th><th>Output</th></tr>
+<tr><td><code>A obj1 = new B();</code></td><td>Parent constructor runs first, then child.</td><td>A's Constructor, B's Constructor</td></tr>
+<tr><td><code>A obj2 = new A();</code></td><td>Only parent object is created.</td><td>A's Constructor</td></tr>
+<tr><td><code>B obj3 = new B();</code></td><td>Parent constructor runs first, then child.</td><td>A's Constructor, B's Constructor</td></tr>
+<tr><td><code>obj1.show();</code></td><td>Static method depends on reference type A.</td><td>Class A</td></tr>
+<tr><td><code>obj1.display();</code></td><td>Overridden method runs from object type B.</td><td>display B</td></tr>
+<tr><td><code>privateMethod();</code></td><td>Called inside B's display method.</td><td>Private method in Class B</td></tr>
+<tr><td><code>obj2.show();</code></td><td>Reference type is A.</td><td>Class A</td></tr>
+<tr><td><code>obj2.display();</code></td><td>Object type is A.</td><td>display A</td></tr>
+<tr><td><code>privateMethod();</code></td><td>A's private method executes.</td><td>Private method in Class A</td></tr>
+<tr><td><code>obj1.method1();</code></td><td>B has a different parameter, so A's method is called.</td><td>Parent method</td></tr>
+<tr><td><code>privateMethod();</code></td><td>A's private method is called inside A's method1.</td><td>Private method in Class A</td></tr></table>
+<h3>Important Rules</h3>
+<ol><li>Constructor: Parent executes first, then Child.</li>
+<li>Overriding: Object type decides which method runs.</li>
+<li>Static method: Reference type decides which method runs.</li>
+<li>Private method: Cannot be overridden.</li>
+<li>Overloading: Different parameters mean a different method.</li>
+<li>Superclass reference: Cannot directly access child-only methods.</li></ol>
+<p><b>Note:</b> <code>obj1.method2()</code> causes a compile-time error because <code>method2()</code> is not defined in class A. Use <code>((B) obj1).method2()</code> to call it through downcasting.</p>
+<div class="tip"><b>Remember:</b> VS = বাম — Variable ও Static → বাম পাশের Reference · Overridden method → ডান পাশের Object · Private → নিজের Class</div>
+</section>
+
+<!-- Q12 -->
+<section class="q" id="q12"><div class="sg">Teacher suggestion 8</div><h2><b>Q12.</b>Write a short note on Modifiers.</h2>
+<p><b>Definition:</b> Modifiers are keywords in Java that change the accessibility or behavior of classes, variables, methods, and constructors.</p>
+<p>Java has two types of modifiers:</p>
+<h3>1. Access Modifiers</h3>
+<p>Access modifiers control the visibility of classes, variables, methods, and constructors.</p>
+<table><tr><th>Modifier</th><th>Meaning</th></tr>
+<tr><td>private</td><td>Accessible only within the same class.</td></tr>
+<tr><td>default</td><td>Accessible within the same package.</td></tr>
+<tr><td>protected</td><td>Accessible within the same package and subclasses.</td></tr>
+<tr><td>public</td><td>Accessible from everywhere.</td></tr></table>
+<p><b>Visibility order:</b> private &lt; default &lt; protected &lt; public</p>
+<h3>2. Non-Access Modifiers</h3>
+<p>Non-access modifiers change the behavior of classes, variables, and methods.</p>
+<table><tr><th>Modifier</th><th>Meaning</th></tr>
+<tr><td>static</td><td>Belongs to the class, not an object.</td></tr>
+<tr><td>final</td><td>Prevents changing, overriding, or inheritance depending on its use.</td></tr>
+<tr><td>abstract</td><td>Declares an incomplete class or method.</td></tr>
+<tr><td>synchronized</td><td>Allows one thread at a time to execute a method on the same object.</td></tr>
+<tr><td>transient</td><td>Prevents a variable from being serialized.</td></tr>
+<tr><td>volatile</td><td>Ensures threads read the latest shared variable value.</td></tr></table>
+<div class="tip"><b>Remember:</b> Access = কে ব্যবহার করতে পারবে? · Non-Access = কীভাবে কাজ করবে?</div>
+</section>
+
+<!-- Q13 -->
+<section class="q" id="q13"><div class="sg">Teacher suggestion 9</div><h2><b>Q13.</b>Write the uses of the <code>super</code> keyword with example.</h2>
+<p><b>Definition:</b> The super keyword is used to refer to the parent class. In Java, it is used to access the variables, methods, and constructors of the immediate parent class.</p>
+<p>There are three main uses of the super keyword:</p>
+<ol>
+<li><b>Access Parent Class Variable:</b> Used to access a parent class variable when the parent and child have the same variable name. — <code>super.speed;</code></li>
+<li><b>Call Parent Class Method:</b> Used to call a parent class method that has been overridden in the child class. — <code>super.display();</code></li>
+<li><b>Call Parent Class Constructor:</b> Used to call the parent class constructor from the child class constructor. — <code>super();</code></li>
+</ol>
+<div class="lbl">Complete Example</div>
+<pre>class Vehicle {
+    int speed = 50;
+
+    Vehicle() {
+        System.out.println("Vehicle created");
+    }
+
+    void display() {
+        System.out.println("Vehicle display");
+    }
+}
+
+class Bike extends Vehicle {
+    int speed = 100;
+
+    Bike() {
+        super();
+        System.out.println("Bike created");
+    }
+
+    void display() {
+        super.display();
+        System.out.println("Bike speed: " + speed);
+        System.out.println("Vehicle speed: " + super.speed);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Bike b = new Bike();
+        b.display();
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">Vehicle created
+Bike created
+Vehicle display
+Bike speed: 100
+Vehicle speed: 50</pre>
+<p><b>Rules:</b> <code>super()</code> must be the first statement of the child constructor. <code>super</code> cannot be used inside a static method. <code>super</code> can access only the immediate parent class members.</p>
+<h3>Example 2: super() with constructors</h3>
+<pre>class A {
+    A() {
+        System.out.println("class A default constructor");
+    }
+
+    A(int x) {
+        System.out.println("class A parameterized constructor");
+    }
+}
+
+class B extends A {
+    B() {
+        super();
+        System.out.println("class B default constructor");
+    }
+
+    B(int x) {
+        super(x);
+        System.out.println("class B parameterized constructor");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        B b1 = new B();
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">class A default constructor
+class B default constructor</pre>
+<p style="font-size:15px;color:var(--mut)">If you write <code>new B(5)</code> instead, the output is "class A parameterized constructor" then "class B parameterized constructor".</p>
+<div class="tip"><b>Remember:</b> VMC = Variable, Method, Constructor</div>
+</section>
+
+<!-- Q14 -->
+<section class="q" id="q14"><div class="sg">Teacher suggestion 10</div><h2><b>Q14.</b>What is Multiple Inheritance and the Diamond Problem? How does Java solve it?</h2>
+<h3>1. Multiple Inheritance</h3>
+<p><b>Definition:</b> Multiple inheritance is a type of inheritance where one child class inherits from more than one parent class.</p>
+<pre>A       B
+ \     /
+    C</pre>
+<pre>interface A {
+    void showA();
+}
+
+interface B {
+    void showB();
+}
+
+class C implements A, B {
+    public void showA() {
+        System.out.println("A method");
+    }
+
+    public void showB() {
+        System.out.println("B method");
+    }
+}</pre>
+<p><b>Important:</b> Java does not support multiple inheritance through classes. It supports multiple inheritance through interfaces.</p>
+<h3>2. Diamond Problem</h3>
+<p><b>Definition:</b> The Diamond Problem occurs when a child class inherits the same method from two parent classes, creating confusion about which method should be executed.</p>
+<pre>      A
+     / \
+    B   C
+     \ /
+      D</pre>
+<p>Here, both B and C inherit from A and override the same method. If D inherits from both B and C, Java cannot decide which version of the method to execute.</p>
+<p><b>How Java Solves It:</b> Java avoids this problem by not allowing multiple inheritance through classes. When two interfaces have the same default method, the implementing class must override that method.</p>
+<pre>interface A {
+    default void show() {
+        System.out.println("A show");
+    }
+}
+
+interface B {
+    default void show() {
+        System.out.println("B show");
+    }
+}
+
+class C implements A, B {
+    public void show() {
+        A.super.show();
+        B.super.show();
+        System.out.println("C show");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        new C().show();
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">A show
+B show
+C show</pre>
+<div class="tip"><b>Remember:</b> Multiple = One child, many parents · Diamond = Two parents, same method, confusion · Solution = Interfaces + Method Overriding</div>
+</section>
+
+<!-- Q15 -->
+<section class="q" id="q15"><div class="sg">Teacher suggestion 11</div><h2><b>Q15.</b>What is a Static Variable? Explain with example.</h2>
+<p><b>Definition:</b> A static variable is a variable that is declared using the static keyword inside a class. It belongs to the class, not to individual objects. It is shared by all objects of that class, and only one copy of it is created.</p>
+<p><b>Key Points:</b></p>
+<ol><li>Declared using the static keyword.</li>
+<li>Only one copy is created for the entire class.</li>
+<li>Shared by all objects of the class.</li>
+<li>Can be accessed using <code>ClassName.variable</code>.</li>
+<li>Commonly used for college names and counters.</li></ol>
+<pre>class Student {
+    int id;
+    String name;
+
+    static String college = "ABC University";
+    static int count = 0;
+
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+        count++;
+    }
+
+    void display() {
+        System.out.println(id + " " + name + " " + college);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student(1, "Rahim");
+        Student s2 = new Student(2, "Karim");
+
+        s1.display();
+        s2.display();
+
+        Student.college = "XYZ University";
+
+        s1.display();
+
+        System.out.println("Total: " + Student.count);
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">1 Rahim ABC University
+2 Karim ABC University
+1 Rahim XYZ University
+Total: 2</pre>
+<p><b>Explanation:</b></p>
+<ul><li>Both students share the same college variable.</li>
+<li>Changing <code>Student.college</code> changes the shared value.</li>
+<li>Every object increases the shared count by 1.</li>
+<li>Therefore, the total count is 2.</li></ul>
+<h3>Short example</h3>
+<pre>class Student {
+    String name;
+    static String university = "DIU";
+
+    Student(String name) {
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println(name + " - " + university);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student("Rahim");
+        Student s2 = new Student("Karim");
+        s1.display();
+        s2.display();
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">Rahim - DIU
+Karim - DIU</pre>
+<div class="tip"><b>Remember:</b> Static = সবার জন্য একটি</div>
+</section>
+
+<!-- Q16 -->
+<section class="q" id="q16"><div class="sg">Teacher suggestion 12 · Code output</div><div style="background:var(--codebg);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:15px"><b>How to explain any output (topic 12):</b>
+<ol style="margin:6px 0 0"><li>Write the output exactly, line by line.</li><li>For each line, say which statement printed it.</li><li>Say why: which constructor ran first, which method ran (object type or reference type), and which values changed.</li><li>End with the concept name: e.g. "This is Method Overriding / Runtime Polymorphism."</li></ol></div><h2><b>Q16.</b>Create an Employee class with calculateSalary(). Create two subclasses, Manager and Programmer, and override the method to calculate salaries according to their roles.</h2>
+<pre>class Employee {
+    double salary;
+
+    Employee(double salary) {
+        this.salary = salary;
+    }
+
+    double calculateSalary() {
+        return salary;
+    }
+}
+
+class Manager extends Employee {
+    Manager(double salary) {
+        super(salary);
+    }
+
+    @Override
+    double calculateSalary() {
+        return salary + (salary * 0.20);
+    }
+}
+
+class Programmer extends Employee {
+    Programmer(double salary) {
+        super(salary);
+    }
+
+    @Override
+    double calculateSalary() {
+        return salary + (salary * 0.10);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Employee e1 = new Manager(50000);
+        Employee e2 = new Programmer(50000);
+
+        System.out.println("Manager Salary: " + e1.calculateSalary());
+        System.out.println("Programmer Salary: " + e2.calculateSalary());
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">Manager Salary: 60000.0
+Programmer Salary: 55000.0</pre>
+<p><b>Explanation:</b></p>
+<ol><li>Manager receives a 20% bonus: 50,000 + 10,000 = 60,000.</li>
+<li>Programmer receives a 10% bonus: 50,000 + 5,000 = 55,000.</li>
+<li>Both classes override the <code>calculateSalary()</code> method.</li>
+<li>The actual object decides which method executes. This is Method Overriding and Runtime Polymorphism.</li></ol>
+</section>
+
+<!-- Q17 -->
+<section class="q" id="q17"><div class="sg">Teacher suggestion 12 · Code output</div><h2><b>Q17.</b>Create a Vehicle class with a method speedUp(). Create two subclasses, Car and Bicycle. Override the method to increase speed differently.</h2>
+<pre>class Vehicle {
+    int speed;
+
+    Vehicle(int speed) {
+        this.speed = speed;
+    }
+
+    void speedUp() {
+        speed += 10;
+    }
+
+    int getSpeed() {
+        return speed;
+    }
+}
+
+class Car extends Vehicle {
+    Car(int speed) {
+        super(speed);
+    }
+
+    @Override
+    void speedUp() {
+        speed += 20;
+    }
+}
+
+class Bicycle extends Vehicle {
+    Bicycle(int speed) {
+        super(speed);
+    }
+
+    @Override
+    void speedUp() {
+        speed += 5;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Vehicle v1 = new Car(40);
+        Vehicle v2 = new Bicycle(10);
+
+        v1.speedUp();
+        v2.speedUp();
+
+        System.out.println("Car Speed: " + v1.getSpeed());
+        System.out.println("Bicycle Speed: " + v2.getSpeed());
+    }
+}</pre>
+<div class="lbl">Output</div>
+<pre class="out">Car Speed: 60
+Bicycle Speed: 15</pre>
+<p><b>Explanation:</b></p>
+<ol><li>The car starts at 40 km/h and increases by 20 km/h.</li>
+<li>The bicycle starts at 10 km/h and increases by 5 km/h.</li>
+<li>Both subclasses override the <code>speedUp()</code> method.</li>
+<li>The actual object decides which method executes. This is Method Overriding and Runtime Polymorphism.</li></ol>
+</section>
+
+<!-- Q18 -->
+<section class="q" id="q18"><div class="sg">Teacher suggestion Additional topics</div><h2><b>Q18.</b>Short notes: Hierarchical Inheritance, Static Method, Dynamic Method.</h2>
+<table><tr><th>Topic</th><th>Answer</th></tr>
+<tr><td>Multiple Inheritance</td><td>One child class inherits from multiple parent classes. Java supports it through interfaces, not classes.</td></tr>
+<tr><td>Hierarchical Inheritance</td><td>Multiple child classes inherit from one parent class.</td></tr>
+<tr><td>Static Method</td><td>A method declared with static belongs to the class and can be called without creating an object.</td></tr>
+<tr><td>Dynamic Method</td><td>A non-static method whose overridden version is selected at runtime based on the actual object.</td></tr></table>
+<pre>// Static Method
+static void show() {
+    System.out.println("Hello");
+}
+
+// Dynamic Method
+void display() {
+    System.out.println("Hello");
+}</pre>
+<div class="tip"><b>Remember:</b> Static = Class-এর Method · Dynamic = Object-এর Method · Hierarchical = One Parent, Many Children · Multiple = One Child, Many Parents</div>
+</section>
+
+</main></div>
+<button id="menu">☰ Questions</button>
+<script>
+// syntax highlight
+const KW=/\b(class|interface|extends|implements|abstract|static|void|int|double|private|public|protected|return|new|super|this|default|final)\b/g;
+document.querySelectorAll('pre:not(.out)').forEach(p=>{
+ const t=p.textContent;
+ if(!/[;{}]/.test(t)) return;
+ const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+ p.innerHTML=t.split(/("(?:[^"\\]|\\.)*"|\/\/.*)/).map((s,i)=>{
+  if(i%2){return s.startsWith('//')?'<span class="cm">'+esc(s)+'</span>':'<span class="st">'+esc(s)+'</span>';}
+  return esc(s).replace(KW,'<span class="kw">$1</span>').replace(/@Override/g,'<span class="an">@Override</span>');
+ }).join('');
+});
+// toc + done checkboxes
+const qs=[...document.querySelectorAll('.q')],toc=document.getElementById('toc');
+let done={};try{done=JSON.parse(localStorage.getItem('oopDone')||'{}')}catch(e){}
+function save(){try{localStorage.setItem('oopDone',JSON.stringify(done))}catch(e){}}
+function prog(){const n=qs.filter(q=>done[q.id]).length;document.getElementById('prog').textContent=n+' / '+qs.length+' done';document.getElementById('pbar').style.width=(n/qs.length*100)+'%';}
+qs.forEach((q,i)=>{
+ const h=q.querySelector('h2').cloneNode(true);const num=h.querySelector('b').textContent.replace('.','');h.querySelector('b').remove();
+ const a=document.createElement('a');a.href='#'+q.id;a.innerHTML='<span>'+num.replace('Q','')+'</span>'+h.textContent.trim();
+ a.onclick=()=>document.getElementById('side').classList.remove('open');toc.appendChild(a);
+ const f=document.createElement('div');f.className='foot';f.innerHTML='<label><input type="checkbox"> Learned</label>';
+ const cb=f.querySelector('input');cb.checked=!!done[q.id];a.classList.toggle('done',cb.checked);
+ cb.onchange=()=>{done[q.id]=cb.checked;a.classList.toggle('done',cb.checked);save();prog();};
+ q.appendChild(f);
+});
+prog();
+</script>
+<script>
+var io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){[...document.getElementById('toc').children].forEach(l=>l.classList.toggle('on',l.hash==='#'+e.target.id));}}),{rootMargin:'-30% 0px -65% 0px'});
+document.querySelectorAll('.q').forEach(q=>io.observe(q));
+document.getElementById('menu').onclick=()=>document.getElementById('side').classList.toggle('open');
+</script>
+</body></html>
